@@ -87,4 +87,23 @@ cursor: pointer;
 text-align: left;
  
 }
-/*25:06 */
+
+
+.quiz-info {
+    display: flex;
+    justify-content: space-between;
+    color :#666;
+    margin-bottom: 10px;
+}
+
+.answers-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 25px;
+
+}
+
+.answer-btn {
+    /* no answer-btn in html */
+}
