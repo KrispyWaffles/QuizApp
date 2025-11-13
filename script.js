@@ -91,29 +91,52 @@ function startQuiz(){
     showQuestion()
 } 
 
-function showQuestion(){
+function showQuestion() {
     // reset state
     answersDisabled = false;
 
-    const currentQuestion = quizQuestions(currentQuestionIndex)
+    const currentQuestion = quizQuestions[currentQuestionIndex]
 
     currentQuestionSpan.textContent = currentQuestion + 1
 
-    const progressPercent = (currentQuestionIndex / quizQuesitons.length) * 100; 
+    const progressPercent = (currentQuestionIndex / quizQuestions.length) * 100; 
     progressBar.style.width = progressPercent + "%"
 
     questionText.textContent = currentQuestion.question
 
     answersContainer.innerHTML = "";
 
-    currentQuestion.anwers.forEach(answer => {
+    currentQuestion.answers.forEach(answer => {
         const button = document.createElement("button")
         button.textContent = answer.text
         button.classList.add("answer-btn")
 
 
         // what is dataset? it's a property of the button element that allows you to store custom data
-        button.dataset.correct = answer.corret
+        button.dataset.correct = answer.correct
+
+        button.addEventListener("click", selectAnswer)
+
+
+        answersContainer.appendChild(button);
+    })
+}
+
+
+function selectAnswer(event) {
+    // optimization check
+    if(answersDisabled) return
+
+    answersDisabled = true
+
+    const selectedButton = event.target;
+    const isCorrect = selectedButton.dataset.correct === "true"
+    Array.from(answersContainer.children).forEach(button => {
+        if(button.dataset.correct === "true") {
+            button.classList.add("correct")
+        } else {
+            button.classList.add("incorrect")
+        }
     })
 }
 
