@@ -97,14 +97,14 @@ function showQuestion() {
 
     const currentQuestion = quizQuestions[currentQuestionIndex];
 
-    currentQuestionSpan.textContent = currentQuestion + 1
+    currentQuestionSpan.textContent = currentQuestionIndex + 1;
 
     const progressPercent = (currentQuestionIndex / quizQuestions.length) * 100; 
     progressBar.style.width = progressPercent + "%"
 
     questionText.textContent = currentQuestion.question
 
-    answersContainer.innerHTML = "";
+    answersContainer.innerHTML = " ";
 
     currentQuestion.answers.forEach(answer => {
         const button = document.createElement("button")
@@ -131,7 +131,7 @@ function selectAnswer(event) {
 
     const selectedButton = event.target;
     const isCorrect = selectedButton.dataset.correct === "true"
-    Array.from(answersContainer.children).forEach(button => {
+    Array.from(answersContainer.children).forEach((button) => {
         if(button.dataset.correct === "true") {
             button.classList.add("correct")
         } else if (button === selectedButton) {
