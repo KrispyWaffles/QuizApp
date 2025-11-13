@@ -28,7 +28,7 @@ const quizQuestions = [
         ],
     },
     {
-        questions: "Which planet is known as the Red Planet?",
+        question: "Which planet is known as the Red Planet?",
         answers: [
             { text: "Venus", correct: false },
             { text: "Mars", correct: true },
@@ -37,7 +37,7 @@ const quizQuestions = [
         ],
     },
     {
-        questions: "What is the largest ocean on Earth?",
+        question: "What is the largest ocean on Earth?",
         answers: [
             { text: "Atlantic Ocean", correct: false },
             { text: "Indian Ocean", correct: false },
@@ -46,7 +46,7 @@ const quizQuestions = [
         ],
     },
     {
-        questions: "Which of these is NOT a programming language?",
+        question: "Which of these is NOT a programming language?",
         answers: [
             { text: "Java", correct: false },
             { text: "Python", correct: false },
@@ -55,7 +55,7 @@ const quizQuestions = [
         ],
     },
     {
-        questions: "What is the last month of the year?",
+        question: "What is the last month of the year?",
         answers: [
             { text: "May", correct: false },
             { text: "Feburary", correct: false },
